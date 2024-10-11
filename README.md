@@ -6,6 +6,16 @@ the need of system selection. It decouples applications from platforms
 so that they can run analytics on one or more platforms seamlessly and
 efficiently.
 
+## Clone repository
+Clone this repository in your preferred location using this command:
+```shell
+git clone https://github.com/juripetersen/d3a-hackathon-wayang.git
+```
+Go to the root directory:
+```shell
+cd d3a-hackathon-wayang
+```
+
 ## Docker
 For ease of use, we recommend installing
 [Docker](https://www.docker.com/products/docker-desktop/), as it allows
@@ -20,6 +30,8 @@ The tools necessary for this are:
     - Apache Spark
     - Hadoop
     - Maven
+
+Make sure that docker is up and running.
 
 ### Step 1: Building the container
 In order to create the container, we need to build and start it:
