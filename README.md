@@ -16,10 +16,10 @@ container with all options in one command.
 We provide a [pre-built docker image](https://hub.docker.com/r/apache/incubator-wayang)
 that contains the necessary tooling in order to run or develop Apache Wayang.
 The tools necessary for this are:
-    - Java 11
-    - Apache Spark
-    - Hadoop
-    - Maven
+- Java 11
+- Apache Spark
+- Hadoop
+- Maven
 
 ### Step 1: Building the container
 In order to create the container, we need to build and start it:
@@ -30,7 +30,7 @@ docker compose up -d --build
 
 ### Step 2: Connecting to the app container
 
-In order to get a interactive bash session that allows running commands
+In order to get an interactive bash session that allows running commands
 inside of the app container, run the following:
 
 ```shell
@@ -59,7 +59,7 @@ Replace `<arg1> <arg2>, ...` with the application-specific parameters that you w
 **Running the app.** To run the app, launch the main class:
 
 ```shell
-mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.WordCount" -Dexec.args="java,spark file://$(pwd)/README.md"
+
 ```
 Even though this app is written in Scala, you can launch it in a regular JVM. Run the app without parameters to get a description of the required parameters.
 
