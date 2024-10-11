@@ -6,15 +6,6 @@ the need of system selection. It decouples applications from platforms
 so that they can run analytics on one or more platforms seamlessly and
 efficiently.
 
-## Installing Wayang
-Download from Apache Wayang into this folder from
-[GitHub](https://github.com/apache/incubator-wayang) using the following
-command:
-
-```shell
-git clone https://github.com/apache/incubator-wayang.git
-```
-
 ## Docker
 For ease of use, we recommend installing
 [Docker](https://www.docker.com/products/docker-desktop/), as it allows
@@ -70,7 +61,7 @@ cd wayang-0.7.1
 To run any of the following example applications, use this format:
 
 ```shell
-<main class> exp(<ID>[,tags=<tag>,...][,conf=<key>:<value>,...]) <plugin>(,<plugin>)* <arg1> <arg2> ...
+mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.Main" -Dexec.args="java,spark file://$(pwd)/README.md"
 ```
 
 Replace `<arg1> <arg2>, ...` with the application-specific parameters that you want to use.
@@ -84,7 +75,7 @@ org.apache.wayang.apps.wordcount.WordCountScala
 ```
 
 ```bash
-./bin/wayang-submit org.apache.wayang.apps.wordcount.WordCountScala exp\(123\) java file://$(pwd)/README.md
+mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.Main" -Dexec.args="java,spark file://$(pwd)/README.md"
 ```
 
 Even though this app is written in Scala, you can launch it in a regular JVM. Run the app without parameters to get a description of the required parameters.

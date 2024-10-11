@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package org.apache.wayang.apps.wordcount
+package org.apache.wayang.hackathon
 
 import org.apache.wayang.apps.util.{ExperimentDescriptor, Parameters, ProfileDBHelper}
 import org.apache.wayang.api._
@@ -32,7 +32,7 @@ import org.apache.wayang.core.util.fs.FileSystems
   *
   * @see [[WordCountWithJavaNativeAPI]]
   */
-class WordCountScala(plugin: Plugin*) {
+class WordCount(plugin: Plugin*) {
 
   /**
     * Run the word count over a given file.
@@ -66,7 +66,7 @@ class WordCountScala(plugin: Plugin*) {
 /**
   * Companion object for [[WordCountScala]].
   */
-object WordCountScala extends ExperimentDescriptor {
+object WordCount extends ExperimentDescriptor {
 
   override def version = "0.1.0"
 
@@ -88,7 +88,7 @@ object WordCountScala extends ExperimentDescriptor {
     } else null
 
     // Run wordCount.
-    val wordCount = new WordCountScala(plugins: _*)
+    val wordCount = new WordCount(plugins: _*)
     val words =
       (if (wordsPerLine != null) {
         wordCount(inputFile, wordsPerLine)
