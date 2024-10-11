@@ -1,0 +1,13 @@
+name: apache-wayang
+
+services:
+  app:
+    container_name: apache-wayang-app
+    image: apache/incubator-wayang:latest
+    ports:
+      - 8888:8888
+    volumes:
+      - .incubator-wayang/:/var/www/html
+      - .incubator-wayang/.m2/repository/:/root/.m2/repository
+    tty: true
+    restart: always
