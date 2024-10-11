@@ -38,23 +38,11 @@ docker exec -it apache-wayang-app bash
 ```
 
 ## Tooling
-Within the root directory of Wayang (/var/www/html in our container),
-run the following command to install all packages in Wayang:
-```shell
-mvn clean install -DskipTests
-```
+Within the root directory (/var/www/html in our container),
+run the following command to install all packages including Wayang:
 
-Packaging the project to build the executable:
 ```shell
-mvn clean package -pl :wayang-assembly -Pdistribution
-```
-
-Execute your code:
-```shell
-cd wayang-assembly/target/
-tar -xvf apache-wayang-assembly-0.7.1-incubating-dist.tar.gz
-cd wayang-0.7.1
-./bin/wayang-submit org.apache.wayang.<main_class> <parameters>
+mvn clean install
 ```
 
 ## Examples
@@ -68,16 +56,11 @@ Replace `<arg1> <arg2>, ...` with the application-specific parameters that you w
 
 ### WordCount
 **Description.** This app takes a text input file and counts the number occurrences of each word in the text. This simple app has become some sort of _"Hello World"_ program for data processing systems.
-
 **Running the app.** To run the app, launch the main class:
-```java
-org.apache.wayang.apps.wordcount.WordCountScala
-```
 
-```bash
-mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.Main" -Dexec.args="java,spark file://$(pwd)/README.md"
+```shell
+mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.WordCount" -Dexec.args="java,spark file://$(pwd)/README.md"
 ```
-
 Even though this app is written in Scala, you can launch it in a regular JVM. Run the app without parameters to get a description of the required parameters.
 
 ### Stocks
