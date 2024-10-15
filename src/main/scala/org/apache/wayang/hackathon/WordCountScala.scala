@@ -32,7 +32,7 @@ import org.apache.wayang.core.util.fs.FileSystems
   *
   * @see [[WordCountWithJavaNativeAPI]]
   */
-class WordCount(plugin: Plugin*) {
+class WordCountScala(plugin: Plugin*) {
 
   /**
     * Run the word count over a given file.
@@ -66,7 +66,7 @@ class WordCount(plugin: Plugin*) {
 /**
   * Companion object for [[WordCountScala]].
   */
-object WordCount extends ExperimentDescriptor {
+object WordCountScala extends ExperimentDescriptor {
 
   override def version = "0.1.0"
 
@@ -88,7 +88,7 @@ object WordCount extends ExperimentDescriptor {
     } else null
 
     // Run wordCount.
-    val wordCount = new WordCount(plugins: _*)
+    val wordCount = new WordCountScala(plugins: _*)
     val words =
       (if (wordsPerLine != null) {
         wordCount(inputFile, wordsPerLine)
