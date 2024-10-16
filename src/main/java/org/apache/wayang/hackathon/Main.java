@@ -45,11 +45,6 @@ public class Main {
             }
 
             Configuration configuration = new Configuration();
-            configuration.setProperty("spark.master", "spark://spark-cluster:7077");
-            configuration.setProperty("spark.deploy.mode", "cluster");
-            //configuration.setProperty("spark.driver.host", "spark-cluster");
-            //configuration.setProperty("spark.driver.port", "7077");
-
             WayangContext wayangContext = new WayangContext(configuration);
 
             for (String platform : args[0].split(",")) {
