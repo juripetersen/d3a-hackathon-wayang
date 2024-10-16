@@ -62,11 +62,11 @@ mvn clean install
 To run any of the following example applications, use this format:
 
 ```shell
-mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.Main" -Dexec.args="java,spark file://$(pwd)/README.md"
+mvn exec:java -Dexec.mainClass="<mainClass>" -Dexec.args="arg1 arg2 ..."
 ```
 
-Replace `<arg1> <arg2>, ...` with the application-specific parameters that you want to use.
-
+Replace `<mainClass>` with the main class prefixed with the package it belongs to and `<arg1> <arg2> ...` with the application-specific parameters that you want to use.
+<!--
 ### WordCount
 **Description.** This app takes a text input file and counts the number occurrences of each word in the text. This simple app has become some sort of _"Hello World"_ program for data processing systems.
 **Running the app.** To run the app, launch the main class:
@@ -75,6 +75,7 @@ Replace `<arg1> <arg2>, ...` with the application-specific parameters that you w
 
 ```
 Even though this app is written in Scala, you can launch it in a regular JVM. Run the app without parameters to get a description of the required parameters.
+-->
 
 ## Tasks
 We prepared tasks that can be found in [TASKS.md](TASKS.md)
