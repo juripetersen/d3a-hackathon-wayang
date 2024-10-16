@@ -52,7 +52,7 @@ docker exec -it apache-wayang-app bash
 
 ## Tooling
 Within the root directory (/var/www/html in our container),
-run the following command to install all packages including Wayang:
+run the following command to install all required packages, including Wayang:
 
 ```shell
 mvn clean install
