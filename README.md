@@ -75,4 +75,5 @@ Replace `<arg1> <arg2>, ...` with the application-specific parameters that you w
 ```
 Even though this app is written in Scala, you can launch it in a regular JVM. Run the app without parameters to get a description of the required parameters.
 
-### Stocks
+## Tasks
+We prepared tasks that can be found in [TASKS.md](TASKS.md)
