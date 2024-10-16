@@ -39,6 +39,9 @@ In order to create the container, we need to build and start it:
 ```shell
 docker compose up -d --build
 ```
+Note 1: This may take a little while.
+
+Note 2: In case of Apple Silicon M1 Chips, please edit the ``docker-compose.yaml`` file and change the image type to ``apache/incubator-wayang:0.7.1-arm64``
 
 ### Step 2: Connecting to the app container
 
