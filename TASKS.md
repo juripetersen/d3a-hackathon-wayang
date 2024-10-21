@@ -1,25 +1,28 @@
 # D3A Hackathon: Unified Data Analytics with Apache Wayang
-Example solutions to the tasks in this document can be found in the
-[source code](./src/main/java/org/apache/wayang/hackathon)
+Example solutions to the tasks in this document can be found
+[here](./src/main/java/org/apache/wayang/hackathon).
 
-## WordCount To ensure your instance of Apache Wayang is operational,
+## WordCount 
+To ensure your instance of Apache Wayang is operational,
 try to compile and execute one of the WordCount examples.
 We provide [two examples](./src/main/java/org/apache/wayang/hackathon)
 with fixed files as input and another example that computes the
 wordcount for any file you wish to give.
 
+<!--- We already did that, right?
 ### Compiling
 In your docker container, run:
 ```shell
 mvn clean install
 ```
+-->
 
-### Running fixed input WordCount
+### Running WordCount with fixed input
 ```shell
 mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.WordCount"
 ```
 
-### Running dynamic input WordCount
+### Running WordCount with dynamic input
 ```shell
 mvn exec:java -Dexec.mainClass="org.apache.wayang.hackathon.Main" -Dexec.args="java,spark file://$(pwd)/README.md"
 ```

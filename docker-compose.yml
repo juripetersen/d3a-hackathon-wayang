@@ -5,7 +5,7 @@ services:
     container_name: apache-wayang-app
     image: apache/incubator-wayang:latest
     # For apple-silicon
-    # image: apache/incubator-wayang:0.7.1-arm64
+    #image: apache/incubator-wayang:0.7.1-arm64
     ports:
       - 8888:8888
     volumes:
