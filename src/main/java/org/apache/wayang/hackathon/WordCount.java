@@ -17,8 +17,8 @@ public class WordCount {
 
         /* Get a plan builder */
         WayangContext wayangContext = new WayangContext(new Configuration())
-//                .withPlugin(Java.basicPlugin())
-                .withPlugin(Spark.basicPlugin());
+                .withPlugin(Java.basicPlugin());
+                //.withPlugin(Spark.basicPlugin());
         JavaPlanBuilder planBuilder = new JavaPlanBuilder(wayangContext)
                 .withJobName("WordCount")
                 .withUdfJarOf(WordCount.class);
@@ -32,10 +32,12 @@ public class WordCount {
                 .flatMap(line -> Arrays.asList(line.split("\\W+")))
                 .withSelectivity(1, 100, 0.9)
                 .withName("Split words")
+                //.withTargetPlatform(Spark.platform())
 
                 /* Filter empty tokens */
                 .filter(token -> !token.isEmpty())
                 .withName("Filter empty words")
+                //.withTargetPlatform(Spark.platform())
 
                 /* Attach counter to each word */
                 .map(word -> new Tuple2<>(word.toLowerCase(), 1)).withName("To lower case, add counter")
@@ -46,6 +48,7 @@ public class WordCount {
                         (t1, t2) -> new Tuple2<>(t1.getField0(), t1.getField1() + t2.getField1())
                 )
                 .withName("Add counters")
+                //.withTargetPlatform(Java.platform())
 
                 /* Execute the plan and collect the results */
                 .collect();
